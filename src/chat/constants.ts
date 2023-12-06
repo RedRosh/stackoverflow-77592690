@@ -1,0 +1,1 @@
+export const USER_CHAT_GATEWAY = 'USER_CHAT_GATEWAY';

@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { UserChatGateway } from './user-chat-gateway.interface';
-import UserChatAdapter from './chat.adapter';
+import { USER_CHAT_GATEWAY } from './constants';
 
 export default class GetUserChatRule {
   constructor(private readonly userChatGateway: UserChatGateway) {}
@@ -15,7 +15,7 @@ export class SendMessageAuthorizationService {
   getUserChatRule: GetUserChatRule;
 
   constructor(
-    @Inject(UserChatAdapter)
+    @Inject(USER_CHAT_GATEWAY)
     userChatGateway: UserChatGateway,
   ) {
     this.getUserChatRule = new GetUserChatRule(userChatGateway);
